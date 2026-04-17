@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import {  IBM_Plex_Mono, Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+// @ts-expect-error If the file is not find 
 import "./globals.css";
 
 const inter = Inter({

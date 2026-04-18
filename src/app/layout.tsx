@@ -10,6 +10,7 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 import{dark} from "@clerk/themes"
+import { ConvexClientProvider } from "@/components/ConvexClientProvider";
 //@ts-expect-error if not file found
 import "./globals.css";
 
@@ -48,6 +49,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <ConvexClientProvider>
             <header className="flex justify-end items-center p-4 gap-4 h-16">
               
               <SignedOut>
@@ -67,6 +69,7 @@ export default function RootLayout({
             </header>
 
             {children}
+            </ConvexClientProvider>
           </ThemeProvider>
         </body>
       </html>

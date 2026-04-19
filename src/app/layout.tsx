@@ -1,16 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, Inter } from "next/font/google";
-import { ThemeProvider } from "@/components/theme-provider";
-import {
-  ClerkProvider,
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  SignUpButton,
-  UserButton,
-} from "@clerk/nextjs";
-import{dark} from "@clerk/themes"
-import { ConvexClientProvider } from "@/components/ConvexClientProvider";
+
+import { Providers } from "@/components/providers";
 //@ts-expect-error if not file found
 import "./globals.css";
 
@@ -36,43 +27,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider
-    appearance={{
-      theme:dark
-    }}
-    >
-      <html lang="en" suppressHydrationWarning>
-        <body className={`${inter.variable} ${plexMono.variable} antialiased`}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <ConvexClientProvider>
-            <header className="flex justify-end items-center p-4 gap-4 h-16">
-              
-              <SignedOut>
-                <SignInButton />
-                
-                <SignUpButton>
-                  <button className="bg-purple-700 text-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">
-                    Sign Up
-                  </button>
-                </SignUpButton>
-              </SignedOut>
-
-              <SignedIn>
-                <UserButton />
-              </SignedIn>
-
-            </header>
-
-            {children}
-            </ConvexClientProvider>
-          </ThemeProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.variable} ${plexMono.variable} antialiased`}>
+        <Providers>
+          
+          {children}
+          
+          </Providers>
+      </body>
+    </html>
   );
 }

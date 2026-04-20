@@ -1,9 +1,6 @@
-"use client";
+import { ProjectsView } from "@/features/projects/components/projects-view"
 
-
-export default function Home() {
-  
-  return (
-    <h1>Hllo</h1>
-  );
+const Home=()=>{
+  return <ProjectsView/>
 }
+export default Home

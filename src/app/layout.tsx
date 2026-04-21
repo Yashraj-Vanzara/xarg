@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { IBM_Plex_Mono, Inter } from "next/font/google";
 
 import { Providers } from "@/components/providers";
+//@ts-expect-error if not given
+import "allotment/dist/style.css";
 //@ts-expect-error if not file found
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";

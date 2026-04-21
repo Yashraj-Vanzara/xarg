@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { generateText, Output } from "ai";
+import { generateText } from "ai";
 import { NextResponse } from "next/server";
 import { auth } from "@clerk/nextjs/server";
 // import { google } from "@ai-sdk/google";

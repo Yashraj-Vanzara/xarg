@@ -16,7 +16,7 @@ import { ProjectsCommandDialog } from "./projects-command-dialog";
 
 
 
-// import { ImportGithubDialog } from "./import-github-dialog";
+import { ImportGithubDialog } from "./import-github-dialog";
 // import { NewProjectDialog } from "./new-project-dialog";
 
 const font = Poppins({
@@ -59,11 +59,11 @@ export const ProjectsView = () => {
         open={commandDialogOpen}
         onOpenChange={setCommandDialogOpen}
       />
-      {/* <ImportGithubDialog
+      <ImportGithubDialog
         open={importDialogOpen}
         onOpenChange={setImportDialogOpen}
       />
-      <NewProjectDialog
+      {/* <NewProjectDialog
         open={newProjectDialogOpen}
         onOpenChange={setNewProjectDialogOpen}
       /> */}

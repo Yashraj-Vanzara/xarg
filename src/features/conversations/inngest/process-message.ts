@@ -118,7 +118,7 @@ export const processMessage = inngest.createFunction(
         name: "title-generator",
         system: TITLE_GENERATOR_SYSTEM_PROMPT,
         model: openai({
-          model: "openai/gpt-4.1-mini",
+          model:  "openai/gpt-oss-120b:free",
           apiKey: process.env.OPENROUTER_API_KEY!,
           baseUrl: "https://openrouter.ai/api/v1",
           defaultParameters: {
@@ -160,7 +160,7 @@ export const processMessage = inngest.createFunction(
       description: "An expert AI coding assistant",
       system: systemPrompt,
       model: openai({
-        model: "openai/gpt-4.1",
+        model:  "openai/gpt-oss-120b:free",
         apiKey: process.env.OPENROUTER_API_KEY!,
         baseUrl: "https://openrouter.ai/api/v1",
         defaultParameters: {

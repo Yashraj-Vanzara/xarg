@@ -111,7 +111,7 @@ export async function POST(request: Request) {
       .replace("{documentation}", documentationContext);
 
     const { text } = await generateText({
-      model: openrouter("openai/gpt-4.1-mini"),
+      model: openrouter("openai/gpt-oss-120b:free"),
     //   output: Output.object({ schema: quickEditSchema }),
       prompt,
       maxOutputTokens:600

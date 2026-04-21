@@ -7,6 +7,7 @@ import { Allotment } from "allotment";
 
 import { Id } from "../../../../convex/_generated/dataModel";
 import { Navbar } from "./navbar";
+//@ts-expect-error if not given
 import "allotment/dist/style.css";
 const MIN_SIDEBAR_WIDTH = 200;
 const MAX_SIDEBAR_WIDTH = 800;
